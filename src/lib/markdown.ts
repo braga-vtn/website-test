@@ -44,7 +44,7 @@ async function parseMdx<Frontmatter>(rawMdx: string) {
         rehypePlugins: [
           preProcess,
           rehypeCodeTitles,
-          rehypePrism,
+          // rehypePrism,
           rehypeSlug,
           rehypeAutolinkHeadings,
           postProcess,
