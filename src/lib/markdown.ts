@@ -9,6 +9,7 @@ import rehypeCodeTitles from "rehype-code-titles";
 import { page_routes, ROUTES } from "./routes-config";
 import { visit } from "unist-util-visit";
 import matter from "gray-matter";
+import rehypeHighlight from 'rehype-highlight';
 
 // custom components imports
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -34,7 +35,7 @@ const components = {
   Outlet,
 };
 
-// can be used for other pages like blogs, Guides etc
+
 async function parseMdx<Frontmatter>(rawMdx: string) {
   return await compileMDX<Frontmatter>({
     source: rawMdx,
@@ -44,7 +45,7 @@ async function parseMdx<Frontmatter>(rawMdx: string) {
         rehypePlugins: [
           preProcess,
           rehypeCodeTitles,
-          // rehypePrism,
+          rehypeHighlight, // Substituído por rehype-highlight
           rehypeSlug,
           rehypeAutolinkHeadings,
           postProcess,
@@ -55,6 +56,7 @@ async function parseMdx<Frontmatter>(rawMdx: string) {
     components,
   });
 }
+
 
 // logic for docs
 
