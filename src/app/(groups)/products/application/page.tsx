@@ -1,16 +1,11 @@
 import { Container } from "@/components/container";
 import { Background } from "@/components/background";
-import { Heading } from "@/components/heading";
-import { Subheading } from "@/components/subheading";
 import { Metadata } from "next";
 import { ComputerApplication } from "@/components/computer-application";
-import { Features } from "@/components/features";
-import { VideoApplication } from "@/components/video-application";
 import { GradualSpacing } from "@/components/ui/gradual-spacing";
-import { Spotlight } from "@/components/ui/Spotlight";
 import CardImage from "@/components/card-image";
 import { StartUse } from "@/components/start-use";
-import { Cover } from "@/components/ui/cover";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Pricing - Everything AI",
@@ -21,89 +16,57 @@ export const metadata: Metadata = {
   },
 };
 
+interface ImageTextPairProps {
+  text: string;
+  imageUrl: string;
+  reverse?: boolean;
+}
+
+const ImageTextPair: React.FC<ImageTextPairProps> = React.memo(({ text, imageUrl, reverse }) => (
+  <div className={`flex items-center justify-between space-x-4 mb-10 ${reverse ? 'flex-row-reverse' : ''}`}>
+    <CardImage size="medium" url={imageUrl} />
+    <div className="p-4 max-w-7xl mx-auto w-full">
+      <p className="mt-20 font-normal text-base text-current dark:text-neutral-300 text-center">
+        {text}
+      </p>
+    </div>
+  </div>
+));
+
+// Definindo o display name para o componente memoizado
+ImageTextPair.displayName = 'ImageTextPair';
+
 export default function PricingPage() {
+  const pairs = [
+    { text: 'O Dashboard é autoexplicativo, apresentando as métricas coletadas pelo Vision, nosso avançado modelo de análise de dados. Ele disponibiliza dezenas de gráficos que permitem uma análise aprofundada em diversos campos como marketing, vendas, produtos, redes sociais e muitos outros.', imageUrl: '/system/website/app-dashboard.jpg' },
+    { text: 'Descubra uma nova maneira de usar um bate-papo, integrando-o aos principais canais de comunicação, como Instagram, WhatsApp e outros, em um único local. Todas as mensagens são monitoradas e respondidas pela Cleo, nosso modelo de atendimento. Com o bate-papo, você acessa inúmeras funções exclusivas da Vistune para aprimorar seu comercial com inteligência artificial.', imageUrl: '/system/website/app-chat.jpg', reverse: true },
+    { text: 'O Flow, ou "caixa de infinitas possibilidades", como preferir, é a página que mais concentra nossos esforços de desenvolvimento. Esta ferramenta permite que você gerencie os modelos da Vistune e crie agentes de inteligência artificial, além de automações para diversas áreas. Imagine ter uma inteligência artificial ao seu dispor, com funções exclusivas criadas por você — isso é o Flow.', imageUrl: '/system/website/app-flow.jpg' },
+    { text: 'Agora que mencionamos modelos e agentes, é hora de você conhecer o Treinamento. Com essa funcionalidade, você pode aperfeiçoar a inteligência artificial usando textos, arquivos, sites e muitos outros recursos. Esse treinamento é distribuído pela rede neural dos modelos e agentes que você selecionar, possibilitando a melhoria da sua experiência com os agentes e o aprimoramento do atendimento feito pela Cleo. É como dizem: ensine uma criança no caminho certo e ela permanecerá nele — aqui, é bastante semelhante.', imageUrl: '/system/website/app-training.jpg', reverse: true },
+    { text: 'Se você cria agentes, modelos e realiza treinamentos, precisará de um local para testar seus desenvolvimentos. Para isso, oferecemos o Playground, que não serve apenas para testes, mas também para você experimentar o auge da tecnologia com os melhores modelos de inteligência artificial para textos, imagens e vídeos em um único lugar. O Playground funciona como um parceiro essencial no seu dia a dia, fornecendo funções exclusivas da Vistune que facilitam suas atividades.', imageUrl: '/system/website/app-playground.jpg' },
+    { text: 'Como você pode imaginar, os modelos de inteligência artificial são mais eficazes quanto mais dados eles possuem. Além disso, para executar funções em outros aplicativos, como enviar uma mensagem no WhatsApp, é necessário conectá-los à Vistune. Para isso, apresentamos as Integrações, que ligam a Vistune aos seus aplicativos favoritos.', imageUrl: '/system/website/app-integrations.jpg', reverse: true },
+    { text: 'Indique e ganhe de forma simples. Temos um plano de indicações que oferece um percentual da venda realizada por meio da sua indicação. Com um cupom único, ao ser utilizado em uma compra na Vistune, você recebe sua recompensa de duas maneiras: em tokens ou dinheiro, conforme sua preferência. Essa é a nossa maneira de agradecer pela confiança e expandir o número de usuários ativos.', imageUrl: '/system/website/app-referrer.jpg' },
+    { text: 'A Vistune adota a filosofia de desenvolver suas soluções alinhadas aos interesses dos usuários. Para reafirmar esse compromisso, disponibilizamos um Roadmap público que reúne as principais atualizações previstas. Essa página está acessível apenas no aplicativo, mas abrange atualizações e novas funcionalidades para toda a Vistune.', imageUrl: '/system/website/app-roadmap.jpg', reverse: true },
+  ];
+
   return (
     <div className="relative overflow-hidden py-20 md:py-0">
       <Background />
-      <Container className="flex flex-col items-center justify-between  pb-20">
+      <Container className="flex flex-col items-center justify-between pb-20">
         <ComputerApplication />
         <GradualSpacing
-          className="font-display text-center text-4xl mt-20 font-bold -tracking-widest  text-black dark:text-white md:text-7xl md:leading-[5rem]"
+          className="font-display text-center text-4xl mt-20 font-bold md:text-7xl"
           text="Conheça o Aplicativo"
         />
-        <p className="mt-4 font-normal text-base text-neutral-300 text-center mx-auto">
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Integer dictum curae tristique; dictumst turpis augue mauris. Dis id aenean maecenas quam cras proin pellentesque. Fusce neque et magnis pretium purus. Elit litora pharetra hac congue ultricies. Non quis vel curabitur vulputate elit class diam in. Taciti per quisque, porttitor quam fermentum conubia. Hac adipiscing orci imperdiet cras iaculis urna duis nascetur.
+        <p className="mt-4 font-normal text-base text-current dark:text-neutral-300 text-center mx-auto">
+          O aplicativo da Vistune consiste em um conjunto de ferramentas desenvolvidas para uso com Inteligência Artificial. Cada funcionalidade, desde a mais simples até a mais avançada, é continuamente aprimorada por um modelo interno nosso, que busca otimizar o aplicativo e identificar possíveis bugs. Através do nosso aplicativo, você terá acesso a várias seções que possibilitam uma experiência criativa com múltiplas formas de aproveitar a Vistune tanto no dia a dia quanto em sua empresa.
         </p>
-        <CardImage />
-        <div className=" p-4 max-w-7xl mt-24 mx-auto relative z-10 w-full pt-20 md:pt-0">
-          <h1 className="text-2xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-            Spotlight is the new trend.
-          </h1>
-        </div>
-        <div className="flex justify between items-center space-x-4 mb-10">
-          <div className=" p-4 max-w-7xl mt-24 mx-auto relative z-10 w-full pt-20 md:pt-0">
-            <p className="mt-4 font-normal text-base text-neutral-300 text-center mx-auto">
-              Lorem ipsum odor amet, consectetuer adipiscing elit. Integer dictum curae tristique; dictumst turpis augue mauris. Dis id aenean maecenas quam cras proin pellentesque. Fusce neque et magnis pretium purus. Elit litora pharetra hac congue ultricies. Non quis vel curabitur vulputate elit class diam in. Taciti per quisque, porttitor quam fermentum conubia. Hac adipiscing orci imperdiet cras iaculis urna duis nascetur.
-            </p>
-          </div>
-          <CardImage />
-        </div>
-        <div className="flex justify between items-center space-x-4 mb-10">
-          <CardImage />
-          <div className=" p-4 max-w-7xl mt-24 mx-auto relative z-10 w-full pt-20 md:pt-0">
-            <p className="mt-4 font-normal text-base text-neutral-300 text-center mx-auto">
-              Lorem ipsum odor amet, consectetuer adipiscing elit. Integer dictum curae tristique; dictumst turpis augue mauris. Dis id aenean maecenas quam cras proin pellentesque. Fusce neque et magnis pretium purus. Elit litora pharetra hac congue ultricies. Non quis vel curabitur vulputate elit class diam in. Taciti per quisque, porttitor quam fermentum conubia. Hac adipiscing orci imperdiet cras iaculis urna duis nascetur.
-            </p>
-          </div>
-        </div>
-        <div className="flex justify between items-center space-x-4 mb-10">
-          <div className=" p-4 max-w-7xl mt-24 mx-auto relative z-10 w-full pt-20 md:pt-0">
-            <p className="mt-4 font-normal text-base text-neutral-300 text-center mx-auto">
-              Lorem ipsum odor amet, consectetuer adipiscing elit. Integer dictum curae tristique; dictumst turpis augue mauris. Dis id aenean maecenas quam cras proin pellentesque. Fusce neque et magnis pretium purus. Elit litora pharetra hac congue ultricies. Non quis vel curabitur vulputate elit class diam in. Taciti per quisque, porttitor quam fermentum conubia. Hac adipiscing orci imperdiet cras iaculis urna duis nascetur.
-            </p>
-          </div>
-          <CardImage />
-        </div>
-        <div className="flex justify between items-center space-x-4 mb-10">
-          <CardImage />
-          <div className=" p-4 max-w-7xl mt-24 mx-auto relative z-10 w-full pt-20 md:pt-0">
-            <p className="mt-4 font-normal text-base text-neutral-300 text-center mx-auto">
-              Lorem ipsum odor amet, consectetuer adipiscing elit. Integer dictum curae tristique; dictumst turpis augue mauris. Dis id aenean maecenas quam cras proin pellentesque. Fusce neque et magnis pretium purus. Elit litora pharetra hac congue ultricies. Non quis vel curabitur vulputate elit class diam in. Taciti per quisque, porttitor quam fermentum conubia. Hac adipiscing orci imperdiet cras iaculis urna duis nascetur.
-            </p>
-          </div>
-        </div>
-        <div className="flex justify between items-center space-x-4 mb-10">
-          <div className=" p-4 max-w-7xl mt-24 mx-auto relative z-10 w-full pt-20 md:pt-0">
-            <p className="mt-4 font-normal text-base text-neutral-300 text-center mx-auto">
-              Lorem ipsum odor amet, consectetuer adipiscing elit. Integer dictum curae tristique; dictumst turpis augue mauris. Dis id aenean maecenas quam cras proin pellentesque. Fusce neque et magnis pretium purus. Elit litora pharetra hac congue ultricies. Non quis vel curabitur vulputate elit class diam in. Taciti per quisque, porttitor quam fermentum conubia. Hac adipiscing orci imperdiet cras iaculis urna duis nascetur.
-            </p>
-          </div>
-          <CardImage />
-        </div>
-        <div className="flex justify between items-center space-x-4 mb-10">
-          <CardImage />
-          <div className=" p-4 max-w-7xl mt-24 mx-auto relative z-10 w-full pt-20 md:pt-0">
-            <p className="mt-4 font-normal text-base text-neutral-300 text-center mx-auto">
-              Lorem ipsum odor amet, consectetuer adipiscing elit. Integer dictum curae tristique; dictumst turpis augue mauris. Dis id aenean maecenas quam cras proin pellentesque. Fusce neque et magnis pretium purus. Elit litora pharetra hac congue ultricies. Non quis vel curabitur vulputate elit class diam in. Taciti per quisque, porttitor quam fermentum conubia. Hac adipiscing orci imperdiet cras iaculis urna duis nascetur.
-            </p>
-          </div>
-        </div>
-        <div className="flex justify between items-center space-x-4 mb-10">
-          <div className=" p-4 max-w-7xl mt-24 mx-auto relative z-10 w-full pt-20 md:pt-0">
-            <p className="mt-4 font-normal text-base text-neutral-300 text-center mx-auto">
-              Lorem ipsum odor amet, consectetuer adipiscing elit. Integer dictum curae tristique; dictumst turpis augue mauris. Dis id aenean maecenas quam cras proin pellentesque. Fusce neque et magnis pretium purus. Elit litora pharetra hac congue ultricies. Non quis vel curabitur vulputate elit class diam in. Taciti per quisque, porttitor quam fermentum conubia. Hac adipiscing orci imperdiet cras iaculis urna duis nascetur.
-            </p>
-          </div>
-          <CardImage />
-        </div>
-        <div className="flex justify between items-center space-x-4 mb-10">
-          <CardImage />
-          <div className=" p-4 max-w-7xl mt-24 mx-auto relative z-10 w-full pt-20 md:pt-0">
-            <p className="mt-4 font-normal text-base text-neutral-300 text-center mx-auto">
-              Lorem ipsum odor amet, consectetuer adipiscing elit. Integer dictum curae tristique; dictumst turpis augue mauris. Dis id aenean maecenas quam cras proin pellentesque. Fusce neque et magnis pretium purus. Elit litora pharetra hac congue ultricies. Non quis vel curabitur vulputate elit class diam in. Taciti per quisque, porttitor quam fermentum conubia. Hac adipiscing orci imperdiet cras iaculis urna duis nascetur.
-            </p>
-          </div>
-        </div>
+        <CardImage size="giant" url="/system/website/app.jpg" />
+        <h1 className="text-2xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-950 to-neutral-500 dark:from-neutral-50 dark:to-neutral-400 bg-opacity-50 mt-24">
+          Principais Páginas
+        </h1>
+        {pairs.map((pair, index) => (
+          <ImageTextPair key={index} text={pair.text} imageUrl={pair.imageUrl} reverse={pair.reverse} />
+        ))}
       </Container>
       <div className="relative">
         <div className="relative z-30">
