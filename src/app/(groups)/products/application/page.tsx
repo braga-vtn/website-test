@@ -61,7 +61,7 @@ export default function PricingPage() {
           O aplicativo da Vistune consiste em um conjunto de ferramentas desenvolvidas para uso com Inteligência Artificial. Cada funcionalidade, desde a mais simples até a mais avançada, é continuamente aprimorada por um modelo interno nosso, que busca otimizar o aplicativo e identificar possíveis bugs. Através do nosso aplicativo, você terá acesso a várias seções que possibilitam uma experiência criativa com múltiplas formas de aproveitar a Vistune tanto no dia a dia quanto em sua empresa.
         </p>
         <CardImage size="giant" url="/system/website/app.jpg" />
-        <h1 className="text-2xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-950 to-neutral-500 dark:from-neutral-50 dark:to-neutral-400 bg-opacity-50 mt-24">
+        <h1 className="text-2xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-950 to-neutral-500 dark:from-neutral-50 dark:to-neutral-400 bg-opacity-50 mt-24 pb-2">
           Principais Páginas
         </h1>
         {pairs.map((pair, index) => (

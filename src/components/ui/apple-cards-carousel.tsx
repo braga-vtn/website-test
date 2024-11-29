@@ -21,6 +21,7 @@ import { useRouter } from "next/navigation";
 
 interface CarouselProps {
   items: JSX.Element[];
+  StopStep?: boolean;
   initialScroll?: number;
 }
 
@@ -39,7 +40,7 @@ export const CarouselContext = createContext<{
   currentIndex: 0,
 });
 
-export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
+export const Carousel = ({ items, StopStep, initialScroll = 0 }: CarouselProps) => {
   const carouselRef = React.useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = React.useState(false);
   const [canScrollRight, setCanScrollRight] = React.useState(true);
@@ -135,20 +136,22 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             ))}
           </div>
         </div>
-        <div className="flex justify-end gap-4 pt-12 md:pt-0">
-          <button
-            onClick={scrollLeft}
-            className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
-          >
-            <IconArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
-          </button>
-          <button
-            onClick={scrollRight}
-            className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
-          >
-            <IconArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
-          </button>
-        </div>
+        {!StopStep &&
+          <div className="flex justify-end gap-4 pt-12 md:pt-0">
+            <button
+              onClick={scrollLeft}
+              className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
+            >
+              <IconArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
+            </button>
+            <button
+              onClick={scrollRight}
+              className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
+            >
+              <IconArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
+            </button>
+          </div>
+        }
       </div>
     </CarouselContext.Provider>
   );
@@ -166,7 +169,9 @@ export const Card = ({
   const router = useRouter();
 
   const handleRedirect = (url: string) => {
-    router.push(url);
+    if (url) {
+      router.push(url);
+    }
   };
 
   return (

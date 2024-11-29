@@ -10,10 +10,9 @@ import Image from "next/image";
 export const Testimonials = () => {
   return (
     <div className="relative z-20 py-10 md:py-40">
-      <Heading as="h2">Loved by people all over the universe</Heading>
+      <Heading as="h2">Feedbacks dos Usuários</Heading>
       <Subheading className="text-center max-w-lg mx-auto">
-        Every AI is used by millions of people around the globe.Our APIs have
-        fan bases and people fight for us over twitter.
+        Confira os depoimentos de alguns usuários da Vistune sobre suas experiências com nossa plataforma.
       </Subheading>
       <TestimonialGrid />
     </div>

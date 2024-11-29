@@ -63,6 +63,8 @@ const config: Config = {
 				}
 			},
 			animation: {
+				move: "move 5s linear infinite",
+				gradient: "gradient 8s linear infinite",
 				"shimmer-slide":
 					"shimmer-slide var(--speed) ease-in-out infinite alternate",
 				"spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
@@ -76,6 +78,15 @@ const config: Config = {
 				aceternity: '`0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`'
 			},
 			keyframes: {
+				move: {
+          "0%": { transform: "translateX(-200px)" },
+          "100%": { transform: "translateX(200px)" },
+        },
+				gradient: {
+          to: {
+            backgroundPosition: "var(--bg-size) 0",
+          },
+        },
 				"spin-around": {
           "0%": {
             transform: "translateZ(0) rotate(0)",
