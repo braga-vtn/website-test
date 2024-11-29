@@ -39,7 +39,7 @@ export function CarouselLandingPage(props: Props) {
   ));
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full mt-20">
       <Carousel items={cards} StopStep={true} />
     </div>
   );

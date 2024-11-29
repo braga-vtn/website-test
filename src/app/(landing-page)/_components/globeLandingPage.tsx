@@ -397,7 +397,6 @@ export function GlobeLandingPage() {
   return (
     <div className="hidden md:block flex flex-row items-center justify-center py-10 h-screen md:h-auto bg-transparent relative w-full">
     <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
-      {/* Ocultar mundial mobile e mostrar em MD */}
       <div className="absolute w-full mt-48 md:mt-0 h-72 md:h-full z-30">
         <World data={sampleArcs} globeConfig={globeConfig} />
       </div>
