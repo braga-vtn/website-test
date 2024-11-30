@@ -63,6 +63,7 @@ const config: Config = {
 				}
 			},
 			animation: {
+				orbit: "orbit calc(var(--duration)*1s) linear infinite",
 				move: "move 5s linear infinite",
 				gradient: "gradient 8s linear infinite",
 				"shimmer-slide":
@@ -78,34 +79,44 @@ const config: Config = {
 				aceternity: '`0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`'
 			},
 			keyframes: {
+				orbit: {
+					"0%": {
+						transform:
+							"rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)",
+					},
+					"100%": {
+						transform:
+							"rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
+					},
+				},
 				move: {
-          "0%": { transform: "translateX(-200px)" },
-          "100%": { transform: "translateX(200px)" },
-        },
+					"0%": { transform: "translateX(-200px)" },
+					"100%": { transform: "translateX(200px)" },
+				},
 				gradient: {
-          to: {
-            backgroundPosition: "var(--bg-size) 0",
-          },
-        },
+					to: {
+						backgroundPosition: "var(--bg-size) 0",
+					},
+				},
 				"spin-around": {
-          "0%": {
-            transform: "translateZ(0) rotate(0)",
-          },
-          "15%, 35%": {
-            transform: "translateZ(0) rotate(90deg)",
-          },
-          "65%, 85%": {
-            transform: "translateZ(0) rotate(270deg)",
-          },
-          "100%": {
-            transform: "translateZ(0) rotate(360deg)",
-          },
-        },
-        "shimmer-slide": {
-          to: {
-            transform: "translate(calc(100cqw - 100%), 0)",
-          },
-        },
+					"0%": {
+						transform: "translateZ(0) rotate(0)",
+					},
+					"15%, 35%": {
+						transform: "translateZ(0) rotate(90deg)",
+					},
+					"65%, 85%": {
+						transform: "translateZ(0) rotate(270deg)",
+					},
+					"100%": {
+						transform: "translateZ(0) rotate(360deg)",
+					},
+				},
+				"shimmer-slide": {
+					to: {
+						transform: "translate(calc(100cqw - 100%), 0)",
+					},
+				},
 				spotlight: {
 					"0%": {
 						opacity: "0",
