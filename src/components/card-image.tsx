@@ -11,6 +11,7 @@ const sizeClasses: { [key: string]: string } = {
   medium1: 'w-[600px]',
   large: 'w-[800px]',
   giant: 'w-[1000px]',
+  giantLanding: 'w-[1000px] -ml-96',
 };
 
 export default function CardImage(props: Props) {

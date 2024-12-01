@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export const Testimonials = () => {
   return (
-    <div className="relative z-20 py-10 md:py-40">
+    <div className="relative z-20 py-10 md:py-10">
       <Heading as="h2">Feedbacks dos Usuários</Heading>
       <Subheading className="text-center max-w-lg mx-auto">
         Confira os depoimentos de alguns usuários da Vistune sobre suas experiências com nossa plataforma.

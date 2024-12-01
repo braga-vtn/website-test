@@ -1,3 +1,4 @@
+"use client"
 import { Container } from "@/components/container";
 import { Background } from "@/components/background";
 import { SectionHero } from "@/app/(landing-page)/_components/hero";
@@ -5,6 +6,14 @@ import { SectionInsights } from "@/app/(landing-page)/_components/section-insigh
 import { HeroWhitelabel } from "@/components/hero-whitelabel";
 import { Testimonials } from "@/components/testimonials";
 import { CallToAction } from "@/app/(landing-page)/_components/call-to-action";
+import BlurIn from "@/components/ui/blur-in";
+import CardImage from "@/components/card-image";
+import { CardVideo } from "@/app/(landing-page)/_components/card-video";
+import ShinyButton from "@/components/ui/shiny-button";
+import { NumberTicker } from "@/components/ui/number-ticker";
+import React from "react";
+import { Progress } from "@/components/ui/react-progress";
+import { Metrics } from "@/components/metrics";
 
 const config = {
   badge: "Automação com IA",
@@ -35,13 +44,11 @@ export default function Home() {
       <Background />
       <Container className="flex min-h-screen flex-col items-center justify-between ">
         <SectionHero badge={config.badge} headline={config.headline} headlineDesc={config.headlineDesc} ctaText={config.ctaText} videoSrc={config.videoSrc} />
+        <HeroWhitelabel />
+        <Testimonials />
+        <Metrics />
       </Container>
       <div className="-mt-40 md:mt-0">
-        <SectionInsights carouselText1={config.carouselText1} carouselText2={config.carouselText2} carouselText3={config.carouselText3} carouselSrc1={config.carouselSrc1} carouselSrc2={config.carouselSrc2} carouselSrc3={config.carouselSrc3} />
-        <HeroWhitelabel />
-        <Container className="flex min-h-screen flex-col mt-10 md:mt-0 items-center justify-between ">
-          <Testimonials />
-        </Container>
         <CallToAction endCtaText1={config.endCtaText1} endCtaText2={config.endCtaText2} endCtaButtonText={config.endCtaButtonText} />
       </div>
     </div>
