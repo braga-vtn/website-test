@@ -156,7 +156,7 @@ export const SectionHero = (props: Props) => {
       />
       <div className="max-w-7xl mx-auto antialiased pt-2 relative">
         <p className="font-normal text-base text-current dark:text-neutral-300 text-center mx-auto">
-        Uma imagem vale mais que mil palavras. Explore como a Cleo interage com seus clientes em diversos cenários.
+          Uma imagem vale mais que mil palavras. Explore como a Cleo interage com seus clientes em diversos cenários.
         </p>
       </div>
       <CardVideo src={"/system/example-video.mp4"} />
