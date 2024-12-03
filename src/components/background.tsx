@@ -35,7 +35,7 @@ const GridBlock = () => {
 const Dot = () => {
   return (
     <div className="h-6 w-6 bg-white dark:bg-neutral-900 flex items-center justify-center rounded-full">
-      <div className="h-2 w-2 bg-neutral-200 dark:bg-neutral-700 rounded-full" />
+      <div className="h-2 w-2 bg-neutral-300 dark:bg-neutral-700 rounded-full" />
     </div>
   );
 };
