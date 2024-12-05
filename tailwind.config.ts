@@ -65,6 +65,8 @@ const config: Config = {
 				}
 			},
 			animation: {
+				"accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
 				orbit: "orbit calc(var(--duration)*1s) linear infinite",
 				move: "move 5s linear infinite",
 				gradient: "gradient 8s linear infinite",
@@ -81,6 +83,14 @@ const config: Config = {
 				aceternity: '`0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`'
 			},
 			keyframes: {
+				"accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
 				orbit: {
 					"0%": {
 						transform:

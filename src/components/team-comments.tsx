@@ -13,7 +13,7 @@ export function TeamComments() {
       quote:
         "Empreendedor apaixonado por negócios digitais e IA. Co-fundador da Vistune, invisto em ideias inovadoras e tecnologias emergentes para criar conexões autênticas e impactantes.",
       name: "Yan Rodrigues",
-      designation: "Fundador",
+      designation: "Co-Fundador",
       src: "/system/avatar-yan.jpg",
     }
   ];
