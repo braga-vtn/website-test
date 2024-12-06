@@ -4,7 +4,7 @@ import Toc from "@/components/toc";
 import { notFound, redirect } from "next/navigation";
 import { getDocsForSlug } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
-import { page_routes } from "@/lib/routes-config";
+import { page_routes_documentation } from "@/lib/routes-config";
 
 type PageProps = {
   params: { slug: string[] };
@@ -53,7 +53,7 @@ export async function generateMetadata({ params: { slug = [] } }: PageProps) {
 }
 
 export function generateStaticParams() {
-  return page_routes.map((item) => ({
+  return page_routes_documentation.map((item) => ({
     slug: item.href.split("/").slice(1),
   }));
 }

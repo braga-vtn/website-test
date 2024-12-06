@@ -27,25 +27,25 @@ import { Logo } from "./Logo";
 const formSchema = z.object({
   name: z
     .string({
-      required_error: "Please enter your name",
+      required_error: "Por favor digite seu nome",
     })
-    .min(1, "Please enter email"),
+    .min(1, "Por favor insira o e-mail"),
   email: z
     .string({
-      required_error: "Please enter email",
+      required_error: "Por favor insira o e-mail",
     })
-    .email("Please enter valid email")
-    .min(1, "Please enter email"),
+    .email("Por favor insira um e-mail válido")
+    .min(1, "Por favor insira o e-mail"),
   company: z
     .string({
-      required_error: "Please enter your company's name",
+      required_error: "Por favor insira o nome da sua empresa",
     })
-    .min(1, "Please enter your company's name"),
+    .min(1, "Por favor insira o nome da sua empresa"),
   message: z
     .string({
-      required_error: "Please enter your message",
+      required_error: "Por favor digite sua mensagem",
     })
-    .min(1, "Please enter your message"),
+    .min(1, "Por favor digite sua mensagem"),
 });
 
 export type LoginUser = z.infer<typeof formSchema>;
@@ -63,7 +63,7 @@ export function ContactForm() {
 
   async function onSubmit(values: LoginUser) {
     try {
-    } catch (e) {}
+    } catch (e) { }
   }
 
   const socials = [
@@ -96,11 +96,10 @@ export function ContactForm() {
         <div className="mx-auto w-full max-w-md">
           <div>
             <h1 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-black dark:text-white">
-              Contact Us
+              Entre em Contato
             </h1>
             <p className="mt-4 text-muted dark:text-muted-dark  text-sm max-w-sm">
-              Please reach out to us and we will get back to you at the speed of
-              light.
+              Este canal é destinado exclusivamente para contatos comerciais com a Vistune AI.
             </p>
           </div>
 
@@ -119,15 +118,15 @@ export function ContactForm() {
                         htmlFor="name"
                         className="block text-sm font-medium leading-6 text-neutral-700 dark:text-muted-dark"
                       >
-                        Full Name
+                        Nome Completo
                       </label>
                       <FormControl>
                         <div className="mt-2">
                           <input
                             id="name"
                             type="name"
-                            placeholder="Manu Arora"
-                            className="block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-aceternity text-black placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
+                            placeholder="Matheus Braga"
+                            className="block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border py-1.5  shadow-aceternity text-black placeholder:text-neutral-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
                             {...field}
                           />
                         </div>
@@ -145,15 +144,15 @@ export function ContactForm() {
                         htmlFor="email"
                         className="block text-sm font-medium leading-6 text-neutral-700 dark:text-muted-dark"
                       >
-                        Email address
+                        Endereço de Email
                       </label>
                       <FormControl>
                         <div className="mt-2">
                           <input
                             id="email"
                             type="email"
-                            placeholder="hello@johndoe.com"
-                            className="block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-aceternity text-black placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
+                            placeholder="braga@gmail.com"
+                            className="block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border py-1.5  shadow-aceternity text-black placeholder:text-neutral-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
                             {...field}
                           />
                         </div>
@@ -171,15 +170,15 @@ export function ContactForm() {
                         htmlFor="company"
                         className="block text-sm font-medium leading-6 text-neutral-700 dark:text-muted-dark"
                       >
-                        Company
+                        Empresa
                       </label>
                       <FormControl>
                         <div className="mt-2">
                           <input
                             id="company"
                             type="company"
-                            placeholder="Aceternity Labs, LLC"
-                            className="block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-aceternity text-black placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
+                            placeholder="Company X"
+                            className="block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border py-1.5  shadow-aceternity text-black placeholder:text-neutral-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
                             {...field}
                           />
                         </div>
@@ -197,15 +196,15 @@ export function ContactForm() {
                         htmlFor="message"
                         className="block text-sm font-medium leading-6 text-neutral-700 dark:text-muted-dark"
                       >
-                        message
+                        Mensagem
                       </label>
                       <FormControl>
                         <div className="mt-2">
                           <textarea
                             rows={5}
                             id="message"
-                            placeholder="Enter your message here"
-                            className="block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-aceternity text-black placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
+                            placeholder="Digite sua mensagem aqui"
+                            className="block min-h-10 w-full bg-white dark:bg-neutral-900 px-4 rounded-md border py-1.5  shadow-aceternity text-black placeholder:text-neutral-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
                             {...field}
                           />
                         </div>
@@ -216,18 +215,18 @@ export function ContactForm() {
                 />
 
                 <div>
-                  <Button className="w-full">Submit</Button>
+                  <Button className="w-full">Enviar</Button>
                 </div>
               </form>
             </div>
           </div>
-          <div className="flex items-center justify-center space-x-4 py-4">
+          {/* <div className="flex items-center justify-center space-x-4 py-4">
             {socials.map((social) => (
               <Link href={social.href} key={social.title}>
                 {social.icon}
               </Link>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </Form>

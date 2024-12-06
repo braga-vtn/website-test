@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "a.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "a.js", "src/contents/policies/privacy-policy/index.mdx", "src/contents/policies/data-processing-addendum/index.mdx", "src/contents/policies/coordinated-vulnerability-disclosure-policy/index.mdx", "src/contents/policies/business-terms/index.mdx", "src/contents/policies/use-policy/index.mdx", "src/contents/policies/terms-of-use/index.mdx", "src/contents/policies/terms-of-service/index.mdx", "src/contents/policies/sharing-publication-policy/index.mdx", "src/contents/policies/service-credit-terms/index.mdx"],
   "exclude": ["node_modules"]
 }

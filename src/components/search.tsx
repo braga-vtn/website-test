@@ -80,7 +80,7 @@ export default function Search() {
           )}
           <ScrollArea className="max-h-[400px] overflow-y-auto">
             <div className="flex flex-col items-start overflow-y-auto sm:px-2 px-1 pb-4">
-              {filteredResults.map((item) => {
+              {filteredResults.map((item: any) => {
                 const level = (item.href.split("/").slice(1).length -
                   1) as keyof typeof paddingMap;
                 const paddingClass = paddingMap[level];

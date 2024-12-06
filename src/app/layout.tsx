@@ -27,7 +27,7 @@ export default function RootLayout({
         <link href='/simbolo_vistune_white.svg' rel='icon' type='image/x-icon' />
         <body
           className={cn(
-            "bg-white dark:bg-black antialiased h-full w-full selection:bg-neutral-200 dark:selection:bg-neutral-800 select-text"
+            "bg-white dark:bg-black antialiased h-full w-full selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black"
           )}
         >
           <ThemeProvider

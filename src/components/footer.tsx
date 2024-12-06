@@ -40,14 +40,13 @@ export const Footer = () => {
       title: "Empresa",
       links: [
         { name: "Sobre Nós", href: "/company/about" },
-        { name: "Carreira", href: "/company/career" },
+        // { name: "Carreira", href: "/company/career" },
         { name: "Contato", href: "/company/contact" },
         { name: "Marca", href: "/company/brand" },
-        { name: "Parceiros", href: "/company/partners" },
+        // { name: "Parceiros", href: "/company/partners" },
         { name: "Docs", href: "/documentation" },
         { name: "Blog", href: "/blog" },
-        { name: "Changelog", href: "/changelog" },
-        { name: "Status", href: "/status" },
+        // { name: "Status", href: "/status" },
       ],
     },
     {

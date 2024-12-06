@@ -1,10 +1,12 @@
 "use client";
 import Balancer from "react-wrap-balancer";
 import { motion } from "framer-motion";
+import { Badge } from "./ui/badge";
 
 type Props = {
   title: string;
   description: string;
+  badge?: string;
 }
 export const TitleDefault = (props: Props) => {
   return (
@@ -46,6 +48,25 @@ export const TitleDefault = (props: Props) => {
           {props.description}
         </Balancer>
       </motion.p>
+      {props.badge &&
+        <motion.div
+          initial={{
+            y: 40,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            ease: "easeOut",
+            duration: 0.5,
+          }}
+          className="text-2xl md:text-4xl -mt-14 lg:text-8xl font-semibold max-w-6xl mx-auto text-center relative z-10"
+        >
+          <Badge variant="outline2" className="font-normal min-w-20 px-auto justify-center mx-auto">{props.badge}</Badge>
+        </motion.div>
+      }
     </div>
   );
 };

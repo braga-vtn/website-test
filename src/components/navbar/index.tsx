@@ -92,10 +92,10 @@ const navItems = [
         title: "Sobre Nós",
         link: "/company/about",
       },
-      {
-        title: "Carreira",
-        link: "/company/career",
-      },
+      // {
+      //   title: "Carreira",
+      //   link: "/company/career",
+      // },
       {
         title: "Contato",
         link: "/company/contact",
@@ -104,10 +104,10 @@ const navItems = [
         title: "Marca",
         link: "/company/brand",
       },
-      {
-        title: "Parceiros",
-        link: "/company/partners",
-      },
+      // {
+      //   title: "Parceiros",
+      //   link: "/company/partners",
+      // },
     ]
   },
   {

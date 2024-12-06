@@ -6,7 +6,7 @@ import rehypePrism from "rehype-prism-plus";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeCodeTitles from "rehype-code-titles";
-import { page_routes, ROUTES } from "./routes-config";
+import { ROUTES_DOCUMENTATION, page_routes_documentation } from "./routes-config";
 import { visit } from "unist-util-visit";
 import matter from "gray-matter";
 import rehypeHighlight from 'rehype-highlight';
@@ -63,11 +63,21 @@ async function parseMdx<Frontmatter>(rawMdx: string) {
 export type BaseMdxFrontmatter = {
   title: string;
   description: string;
+  valid?: string;
 };
 
 export async function getDocsForSlug(slug: string) {
   try {
     const contentPath = getDocsContentPath(slug);
+    const rawMdx = await fs.readFile(contentPath, "utf-8");
+    return await parseMdx<BaseMdxFrontmatter>(rawMdx);
+  } catch (err) {
+  }
+}
+
+export async function getPoliciesForSlug(slug: string) {
+  try {
+    const contentPath = getPoliciesContentPath(slug);
     const rawMdx = await fs.readFile(contentPath, "utf-8");
     return await parseMdx<BaseMdxFrontmatter>(rawMdx);
   } catch (err) {
@@ -95,10 +105,10 @@ export async function getDocsTocs(slug: string) {
 }
 
 export function getPreviousNext(path: string) {
-  const index = page_routes.findIndex(({ href }) => href == `/${path}`);
+  const index = page_routes_documentation.findIndex(({ href }) => href == `/${path}`);
   return {
-    prev: page_routes[index - 1],
-    next: page_routes[index + 1],
+    prev: page_routes_documentation[index - 1],
+    next: page_routes_documentation[index + 1],
   };
 }
 
@@ -111,13 +121,17 @@ function getDocsContentPath(slug: string) {
   return path.join(process.cwd(), "/src/contents/documentation/", `${slug}/index.mdx`);
 }
 
+function getPoliciesContentPath(slug: string) {
+  return path.join(process.cwd(), "/src/contents/policies/", `${slug}/index.mdx`);
+}
+
 function justGetFrontmatterFromMD<Frontmatter>(rawMd: string): Frontmatter {
   return matter(rawMd).data as Frontmatter;
 }
 
 export async function getAllChilds(pathString: string) {
   const items = pathString.split("/").filter((it) => it != "");
-  let page_routes_copy = ROUTES;
+  let page_routes_copy = ROUTES_DOCUMENTATION;
 
   let prevHref = "";
   for (let it of items) {
