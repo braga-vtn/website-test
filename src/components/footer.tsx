@@ -66,12 +66,12 @@ export const Footer = () => {
     {
       title: "Social",
       links: [
-        { name: "Instagram", href: "https://www.instagram.com/vistune" },
-        { name: "X", href: "https://x.com/vistune" },
+        { name: "Instagram", href: "https://www.instagram.com/vistuneai" },
+        { name: "X", href: "https://x.com/vistuneai" },
         { name: "Facebook", href: "https://www.facebook.com/vistune" },
         { name: "Linkedin", href: "https://www.linkedin.com/company/vistune" },
-        { name: "Youtube", href: "https://www.youtube.com/vistune" },
-        { name: "TikTok", href: "https://www.tiktok.com/@vistune" },
+        { name: "Youtube", href: "https://www.youtube.com/@VistuneAI" },
+        { name: "TikTok", href: "https://www.tiktok.com/@vistuneai" },
       ],
     },
   ];

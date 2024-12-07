@@ -29,7 +29,7 @@ async function importBlog(blogFilename: string): Promise<BlogWithSlug> {
 
 export async function getAllBlogs() {
   let blogFilenames = await glob("*/page.mdx", {
-    cwd: "./app/(groups)/blog",
+    cwd: "./src/app/(groups)/blog",
   });
 
   let blogs = await Promise.all(blogFilenames.map(importBlog));

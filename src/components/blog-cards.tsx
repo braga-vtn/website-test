@@ -46,7 +46,7 @@ const data = [
   },
   {
     category: "Futuro da IA",
-    title: "Tendências de Inteligência Artificial para 2025: O que Esperar?.",
+    title: "Tendências de Inteligência Artificial para 2025: O que Esperar?",
     src: "/blog/blog-5.jpg",
     href: "/",
   },

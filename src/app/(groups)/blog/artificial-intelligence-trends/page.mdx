@@ -2,13 +2,12 @@ import { BlogLayout } from "@/components/blog-layout";
 import Thumbnail from "./thumbnail.jpeg";
 
 export const blog = {
-  author: { name: "Manu Arora", src: "/avatar.jpeg" },
-  date: "2023-07-14",
-  title: "Cool things to do with AI",
+  author: { name: "Matheus Braga", src: "/system/avatar-mb.jpg" },
+  date: "2020-07-14",
+  title: "Tendências de IA para 2025: O que Esperar?",
   description:
     "Explore the latest AI tools and applications that are revolutionizing various industries. From image generation to natural language processing, AI is changing the way we think and interact with the world.",
-  image:
-    "https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/blog/blog-6.jpg",
 };
 
 export const metadata = {
@@ -18,6 +17,7 @@ export const metadata = {
     images: [blog.image],
   },
 };
+
 export default (props) => <BlogLayout blog={blog} {...props} />;
 
 ## Lorem ipsum heading
