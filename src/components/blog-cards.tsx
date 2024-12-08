@@ -20,40 +20,33 @@ export function BlogCards() {
 
 const data = [
   {
-    category: "Aplicação da IA",
-    title: "Transformação Empresarial Através da Inteligência Artificial.",
-    src: "/blog/blog-1.jpg",
-    href: "/",
-  },
-  {
-    category: "Educação em IA",
-    title: "Vistune University: Seu Guia para Dominar a IA.",
-    src: "/blog/blog-2.jpg",
-    href: "/",
-  },
-  {
-    category: "Aplicação da IA",
-    title: "Como a IA Está Remodelando Nossas Vidas Diárias.",
-    src: "/blog/blog-3.jpg",
-    href: "/",
-  },
-
-  {
-    category: "Soluções e Inovações",
-    title: "Inovação nas Mãos: Criando Soluções de IA com o Marketplace.",
-    src: "/blog/blog-4.jpg",
-    href: "/",
-  },
-  {
-    category: "Futuro da IA",
-    title: "Tendências de Inteligência Artificial para 2025: O que Esperar?",
-    src: "/blog/blog-5.jpg",
-    href: "/",
-  },
-  {
-    category: "Ética e Segurança",
-    title: "Como lidar com a Segurança e Ética na IA",
+    title: "Tendências de IA para 2025: O que Esperar?",
     src: "/blog/blog-6.jpg",
-    href: "/",
+    href: "/blog/artificial-intelligence-trends",
+  },
+  {
+    title: "Consequências do uso de IA no longo prazo.",
+    src: "/blog/blog-5.jpg",
+    href: "/blog/long-term",
+  },
+  {
+    title: "Como lidar com a Segurança e Ética na IA.",
+    src: "/blog/blog-3.jpg",
+    href: "/blog/safety-and-ethics",
+  },
+  {
+    title: "Transformação empresarial através da IA.",
+    src: "/blog/blog-1.jpg",
+    href: "/blog/business-transformation",
+  },
+  {
+    title: "Como a IA Está Remodelando Nossas Vidas Diárias.",
+    src: "/blog/blog-4.jpg",
+    href: "/blog/reshaping-our-lives",
+  },
+  {
+    title: "Vistune University: Seu guia para dominar a IA.",
+    src: "/blog/blog-2.jpg",
+    href: "/blog/master-artificial-intelligence",
   },
 ];

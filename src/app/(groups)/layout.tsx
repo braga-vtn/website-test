@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <main>
       <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-70"
+        className="-top-40 left-0 md:left-60 md:-top-70 z-40"
         fill="white"
       />
       <nav className="w-full h-[4.4rem] sticky top-0 z-50 backdrop-blur-md">

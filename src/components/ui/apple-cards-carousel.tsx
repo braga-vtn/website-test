@@ -28,7 +28,7 @@ interface CarouselProps {
 type Card = {
   src: string;
   title: string;
-  category: string;
+  category?: string;
   href: string;
 };
 
@@ -180,7 +180,7 @@ export const Card = ({
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={() => handleRedirect(card.href)}
         className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
-        whileHover={{ scale: 1.05 }} // Adicionando efeito de hover
+        whileHover={{ scale: 1.02 }} // Adicionando efeito de hover
         transition={{ type: "spring", stiffness: 300, damping: 20 }} // Animação suave
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
@@ -193,7 +193,7 @@ export const Card = ({
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="text-white text-xl md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2"
+            className="text-white text-xl md:text-3xl font-semibold w-full text-left [text-wrap:balance] font-sans mt-2"
           >
             {card.title}
           </motion.p>
