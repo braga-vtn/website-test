@@ -9,36 +9,76 @@ export type EachRoute = {
 
 export const ROUTES_DOCUMENTATION: EachRoute[] = [
   {
-    title: "Getting Started",
-    href: "/getting-started",
+    title: "Início",
+    href: "/start",
     noLink: true,
     items: [
-      { title: "Introduction", href: "/introduction" },
+      { title: "Introdução", href: "/introduction" },
+      { title: "Primeiros Passos", href: "/first-steps" },
+      { title: "Ecossistema", href: "/ecosystem" },
       {
-        title: "Installation",
-        href: "/installation",
-      },
-      { title: "Quick Start Guide", href: "/quick-start-guide" },
-      {
-        title: "Project Structure",
-        href: "/project-structure",
-      },
-      {
-        title: "Components",
-        href: "/components",
+        title: "Aplicativo",
+        href: "/application",
+        noLink: true,
         items: [
-          { title: "Stepper", href: "/stepper" },
-          { title: "Tabs", href: "/tabs" },
-          { title: "Note", href: "/note" },
-          { title: "Code Block", href: "/code-block" },
-          { title: "Image & Link", href: "/image-link" },
-          { title: "Custom", href: "/custom" },
+          { title: "Introdução", href: "/introduction" },
+          { title: "Dashboard", href: "/dashboard" },
+          { title: "Bate-Papo", href: "/chat" },
+          {
+            title: "Flow",
+            href: "/flow",
+            noLink: true,
+            items: [
+              { title: "Modelos da Vistune", href: "/vistune-models" },
+              { title: "Agentes", href: "/agents" },
+              { title: "Automação", href: "/automation" },
+              { title: "Comandos", href: "/commands" },
+              { title: "Webhooks", href: "/webhooks" },
+            ],
+          },
+          { title: "Treinamentos", href: "/trainings" },
+          { title: "Playground", href: "/playground" },
+          { title: "Integrações", href: "/integrations" },
+          { title: "Arquivos", href: "/files" },
+          { title: "Plano de Indicação", href: "/referral-plan" },
+          { title: "Assinatura", href: "/signature" },
+          {
+            title: "Configurações",
+            href: "/settings",
+            noLink: true,
+            items: [
+              { title: "Perfil", href: "/profile" },
+              { title: "Cadastro", href: "/register" },
+              { title: "Equipe", href: "/team" },
+              { title: "Token de API", href: "/api-token" }
+            ],
+          },
+          { title: "Roadmap", href: "/roadmap" },
         ],
       },
-      { title: "Themes", href: "/themes" },
       {
-        title: "Customize",
-        href: "/customize",
+        title: "University",
+        href: "/university",
+        noLink: true,
+        items: [
+          { title: "Introdução", href: "/introduction" },
+        ],
+      },
+      {
+        title: "Marketplace",
+        href: "/marketplace",
+        noLink: true,
+        items: [
+          { title: "Introdução", href: "/introduction" },
+        ],
+      },
+      {
+        title: "Referência da API",
+        href: "/api-reference",
+        noLink: true,
+        items: [
+          { title: "Introdução", href: "/introduction" },
+        ],
       },
     ],
   },

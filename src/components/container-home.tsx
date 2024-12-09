@@ -7,14 +7,23 @@ import {
 } from "@radix-ui/react-icons";
 
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-import { AppWindow, Book, BrainCircuit, Cable, Leaf } from "lucide-react";
+import { AppWindow, Book, BrainCircuit, Cable, Leaf, SparklesIcon } from "lucide-react";
 
 const features = [
+  // {
+  //   Icon: Book,
+  //   name: "Documentação",
+  //   description: "Veja como deve ser utilizado cada função.",
+  //   href: "/documentation",
+  //   cta: "Ver Mais",
+  //   background: <div className="absolute -right-20 -top-20 opacity-60" />,
+  //   className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+  // },
   {
-    Icon: Book,
-    name: "Documentação",
-    description: "Veja como deve ser utilizado cada função.",
-    href: "/documentation",
+    Icon: SparklesIcon,
+    name: "Agentes",
+    description: "Crie Agentes de IA para funções específicas.",
+    href: "/solutions/agents",
     cta: "Ver Mais",
     background: <div className="absolute -right-20 -top-20 opacity-60" />,
     className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",

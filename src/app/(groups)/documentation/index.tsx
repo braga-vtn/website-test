@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  redirect('/documentation/getting-started/introduction');
+  redirect('/documentation/start/introduction');
 
   return null;
 }
