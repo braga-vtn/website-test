@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Vistune.',
   description: 'Inteligência Artificial para Empresas',
   openGraph: {
-    images: ["https://ai-saas-template-aceternity.vercel.app/banner.png"],
+    images: ["/opengraph-image.jpg"],
   },
 };
 

@@ -14,7 +14,7 @@ export const Companies = () => {
       },
       {
         title: "Facebook",
-        src: "/partners/Facebook.png",
+        src: "/partners/facebook.png",
       },
       {
         title: "Shopify",

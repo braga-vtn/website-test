@@ -13,6 +13,11 @@ import { VideoHome } from "./video-home";
 
 export const Hero = () => {
   const router = useRouter();
+
+  const handleRedirect = (url: string) => {
+    router.push(url);
+  };
+
   return (
     <div className="flex flex-col min-h-screen pt-16 md:pt-30 relative overflow-hidden">
       <motion.h1
@@ -68,11 +73,11 @@ export const Hero = () => {
         }}
         className="flex items-center gap-4 justify-center mt-6 relative z-10"
       >
-        <Button className="hover:bg-neutral-800 dark:hover:bg-neutral-950">Testar Agora</Button>
+        <Button className="hover:bg-neutral-800 dark:hover:bg-neutral-950" onClick={() => handleRedirect("https://app.vistune.ai")}>Testar Agora</Button>
         <Button
           variant="simple"
           as={Link}
-          href="/contact"
+          href="/company/about"
           className="flex space-x-2 items-center group"
         >
           <span>Sobre a Vistune</span>

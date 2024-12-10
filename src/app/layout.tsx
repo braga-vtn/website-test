@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Vistune.',
   description: 'Inteligência Artificial para Empresas',
   openGraph: {
-    images: ["https://ai-saas-template-aceternity.vercel.app/banner.png"],
+    images: ["/opengraph-image.jpg"],
   },
 };
 
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" className={`${font.className}`}>
-        <link href='/simbolo_vistune_white.svg' rel='icon' type='image/x-icon' />
+        <link href='/logos/favicon.ico' rel='icon' type='image/x-icon' />
         <body
           className={cn(
             "bg-white dark:bg-black antialiased h-full w-full selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black"
