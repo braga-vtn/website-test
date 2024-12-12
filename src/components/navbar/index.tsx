@@ -110,11 +110,11 @@ const navItems = [
       // },
     ]
   },
-  // {
-  //   title: "Docs",
-  //   submenu: false,
-  //   link: "/documentation",
-  // },
+  {
+    title: "Documentação",
+    submenu: false,
+    link: "/documentation",
+  },
   {
     title: "Blog",
     submenu: false,

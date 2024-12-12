@@ -50,6 +50,7 @@ export const ROUTES_DOCUMENTATION: EachRoute[] = [
               { title: "Perfil", href: "/profile" },
               { title: "Cadastro", href: "/register" },
               { title: "Equipe", href: "/team" },
+              { title: "Aparência", href: "/appearance" },
               { title: "Token de API", href: "/api-token" }
             ],
           },

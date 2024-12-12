@@ -1,57 +1,27 @@
 ---
-title: Image and Link
-description: This section provides an overview of how AriaDocs handles links and images in Markdown.
+title: Introdução
+description: Explore o mundo da Vistune e descubra tudo o que ele pode oferecer. Aqui, você encontrará explicações detalhadas sobre todas as funcionalidades!
 ---
 
-In AriaDocs, all links and images written in Markdown are automatically converted to their respective Next.js components. This allows for better optimization and performance in your application.
+Talvez você tenha chegado aqui por acaso e não sabe por onde começar, estou certo? De qualquer forma, aqui vai um `Olá` para você 😉.
 
-## Links
+Independentemente do que você precisa, a resposta está aqui. Por quê? Porque todas as criações da Vistune estão detalhadas neste espaço. Simplificando, tudo mesmo!
 
-When you create a link in your Markdown, it is converted to the Next.js `Link` component. This enables client-side navigation and improves loading times. Here’s an example of how a Markdown link is transformed:
+## Como encontrar o que precisa?
 
-### Markdown
+Nesta tela, você verá um `painel à esquerda` e outro à direita. Eles são sua porta de entrada para navegar pela nossa documentação. Antes de mergulhar, é essencial entender o `ecossistema` da Vistune e como tudo se conecta. Recomendamos uma visita à [página dedicada](/documentation/start/ecosystem) a isso!
 
-```markdown
-[Visit OpenAI](https://www.openai.com)
-```
+Agora que você já conhece o ecossistema da Vistune AI, vamos ao que interessa: como encontrar uma informação na documentação? No menu à esquerda, selecione o assunto principal, como `Aplicativo`. Isso abrirá um submenu com novos tópicos. Continue navegando dessa forma até encontrar exatamente o que procura.
 
-### Rendered Output
+![Alt text for the image](/docs/intro-left-panel.png)
+> Painel à esquerda
 
-The above Markdown is converted to:
+## Precisa de suporte?
 
-```jsx
-<Link href="https://www.openai.com" target="_blank" rel="noopener noreferrer">
-    Visit OpenAI
-</Link>
-```
+Nossa documentação foi estruturada para atender a todas as suas necessidades, evitando que você precise esperar pelo suporte da equipe Vistune. No entanto, é normal ter dúvidas, especialmente no início, sobre nossos serviços.
 
-## Images
+Sinta-se à vontade para criar um ticket de suporte diretamente na plataforma em que você tem dúvidas. Por exemplo, no aplicativo, está [explicado aqui](/documentation/start/application/introduction#suporte). Você também pode nos contatar pelo email support@vistune.ai. Estamos aqui para ajudar!
 
-Similarly, images in Markdown are transformed into the Next.js `Image` component. This allows for automatic image optimization, such as lazy loading and resizing, which enhances performance and user experience. Here’s an example:
+### Perguntas frequentes
 
-### Markdown
-
-```markdown
-![Alt text for the image](https://via.placeholder.com/150)
-```
-
-### Rendered Output
-
-The above Markdown is converted to:
-
-```jsx
-<Image
-    src="https://via.placeholder.com/150"
-    alt="Alt text for the image"
-    width={800}
-    height={350}
-/>
-```
-
-## Benefits
-
-- **Performance Optimization**: Automatic conversion to Next.js components ensures optimized loading of images and links.
-- **Improved User Experience**: Client-side navigation with Next.js `Link` improves the browsing experience.
-- **Responsive Images**: Next.js `Image` component handles responsive images, providing the best quality for various device sizes.
-
-By utilizing these features, you can ensure that your documentation is not only visually appealing but also performs efficiently.
+Uma das consequências de ter várias áreas em desenvolvimento na mesma empresa é receber perguntas sobre diferentes assuntos, que representam diversas necessidades. Para facilitar, criamos uma página dedicada às dúvidas mais frequentes. Convido você a acessá-la [clicando aqui](/resources/help).

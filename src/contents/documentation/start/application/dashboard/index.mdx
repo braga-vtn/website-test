@@ -1,57 +1,76 @@
 ---
-title: Image and Link
-description: This section provides an overview of how AriaDocs handles links and images in Markdown.
+title: Dashboard
+description: Visualize as métricas coletadas pela Vistune em diversos gráficos e tabelas diferentes, para uma análise mais detalhada e informativa.
 ---
 
-In AriaDocs, all links and images written in Markdown are automatically converted to their respective Next.js components. This allows for better optimization and performance in your application.
+O Dashboard da Vistune oferece mais de 80 gráficos diferentes. A maioria das coletas de dados é realizada através de integrações com outros aplicativos, como Google Ads, Meta Ads, Google Analytics, Shopify, entre outros.
 
-## Links
+## Estrutura e Layout
 
-When you create a link in your Markdown, it is converted to the Next.js `Link` component. This enables client-side navigation and improves loading times. Here’s an example of how a Markdown link is transformed:
+Nesta seção, explicaremos cada uma das funções disponíveis na página. Vamos dar uma olhada na estrutura básica do dashboard:
 
-### Markdown
+![Imagem ilustrativa](/docs/dashboard.jpg)
 
-```markdown
-[Visit OpenAI](https://www.openai.com)
-```
+### 1. Menu
 
-### Rendered Output
+No menu, você pode acessar diferentes páginas do dashboard. Cada página reúne gráficos relacionados a um tema específico. Veja a imagem abaixo:
 
-The above Markdown is converted to:
+![Imagem ilustrativa](/docs/dashboard-1.png)
 
-```jsx
-<Link href="https://www.openai.com" target="_blank" rel="noopener noreferrer">
-    Visit OpenAI
-</Link>
-```
 
-## Images
+| **Tópico**      | **Utilização**                                                                 |
+|------------------|--------------------------------------------------------------------------------|
+| Vistune          | Visualize todos os dados e a utilização da sua conta aqui.                      |
+| Clientes         | Acesse a lista de clientes e as métricas das automações neste dashboard.       |
+| Catálogo         | Confira os dados sobre seus produtos que a IA da Vistune e as integrações podem exibir. |
+| Vendas           | Veja diversas métricas sobre suas vendas, além de uma tabela detalhada.          |
+| Tráfego          | Acompanhe o desempenho do tráfego em sites e campanhas.                           |
+| Redes Sociais    | Visualize as métricas do seu perfil e páginas nas redes sociais.                  |
 
-Similarly, images in Markdown are transformed into the Next.js `Image` component. This allows for automatic image optimization, such as lazy loading and resizing, which enhances performance and user experience. Here’s an example:
+### 2. Alterar Dashboards
 
-### Markdown
+Um dashboard pode conter várias páginas, funcionando como subtópicos de um mesmo assunto. Você pode alternar entre elas usando os botões, conforme mostrado na imagem abaixo:
 
-```markdown
-![Alt text for the image](https://via.placeholder.com/150)
-```
+![Imagem ilustrativa](/docs/dashboard-2.png)
 
-### Rendered Output
+<Note title="Nota">
+Caso uma opção esteja desabilitada, não se preocupe. A página pode estar em desenvolvimento ou em manutenção.
+</Note>
 
-The above Markdown is converted to:
+### 3. Diferentes Datas
 
-```jsx
-<Image
-    src="https://via.placeholder.com/150"
-    alt="Alt text for the image"
-    width={800}
-    height={350}
-/>
-```
+Escolha diferentes períodos para analisar suas métricas ao longo do tempo. Usando este botão, você pode alterar as datas de início e fim ou aplicar filtros padrão, como: últimos 7 dias, últimos 3 meses e outros. Veja mais detalhes na imagem abaixo.
 
-## Benefits
+![Imagem ilustrativa](/docs/dashboard-3.png)
 
-- **Performance Optimization**: Automatic conversion to Next.js components ensures optimized loading of images and links.
-- **Improved User Experience**: Client-side navigation with Next.js `Link` improves the browsing experience.
-- **Responsive Images**: Next.js `Image` component handles responsive images, providing the best quality for various device sizes.
+### 4. Vision
 
-By utilizing these features, you can ensure that your documentation is not only visually appealing but also performs efficiently.
+Uma Inteligência Artificial analisando suas métricas e fornecendo um relatório completo? Isso mesmo, esse é o Vision. Isso pode ser feito através do botão mostrado na imagem abaixo!
+
+![Imagem ilustrativa](/docs/dashboard-4.png)
+
+<Note title="Nota">
+O relatório é gerado apenas para a página e o período em que foi solicitado. Em alguns minutos, ele estará disponível para download na [página Arquivos](https://app.vistune.ai/files).
+</Note>
+
+#### Perguntas ao Modelo
+
+O Vision vai além disso! Você pode utilizá-lo diretamente para esclarecer dúvidas sobre suas métricas, buscar soluções e interagir com um analista de dados que entende a fundo sua empresa.
+
+<Note title="Nota">
+Para isso, basta ir ao [Playground](https://app.vistune.ai/playground) e selecionar o Vision. Para mais detalhes sobre como realizar essa comunicação e configurar o modelo da Vistune, acesse [esta página](/documentation/start/application/flow/vistune-models).
+</Note>
+
+## Assuntos Relacionados
+
+Esta página abordou diversos tópicos, e compreendemos que você pode ter algumas dúvidas. Abaixo, você encontrará uma lista com todos os assuntos discutidos acima, cada um com uma página dedicada.
+
+<Note title="Nota">
+  Se, após a leitura, ainda houver alguma dúvida, sinta-se à vontade para criar
+  um [ticket de suporte](/documentation/start/application/introduction#suporte). Estamos à disposição para ajudar!
+</Note>
+
+| **Tópico**                      | **Utilização**                                                                 |
+|---------------------------------|--------------------------------------------------------------------------------|
+| [Integrações](/documentation/start/application/integrations)            | As integrações são responsáveis pela coleta de grande parte dos dados pela Vistune, permitindo que o Vision os aproveite de maneira eficaz. |
+| [Modelos da Vistune](/documentation/start/application/flow/vistune-models)    | Nesta página, discutimos o Vision. Recomendamos a leitura para entender melhor como esse modelo opera. |

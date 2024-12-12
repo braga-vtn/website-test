@@ -44,7 +44,7 @@ export const Footer = () => {
         { name: "Contato", href: "/company/contact" },
         { name: "Marca", href: "/company/brand" },
         // { name: "Parceiros", href: "/company/partners" },
-        // { name: "Docs", href: "/documentation" },
+        { name: "Documentação", href: "/documentation" },
         { name: "Blog", href: "/blog" },
         // { name: "Status", href: "/status" },
       ],

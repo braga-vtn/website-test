@@ -22,9 +22,9 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
   return (
     <div className="flex items-start gap-10">
       <div className="flex-[4.5] pt-10">
-        <DocsBreadcrumb paths={slug} />
+        {/* <DocsBreadcrumb paths={slug} /> */}
         <Typography>
-          <h1 className="text-3xl !-mt-0.5">{res.frontmatter.title}</h1>
+          <h1 className="text-3xl !-mt-3">{res.frontmatter.title}</h1>
           <p className="-mt-4 text-muted-foreground text-[16.5px]">
             {res.frontmatter.description}
           </p>

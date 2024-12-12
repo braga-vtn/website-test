@@ -1,57 +1,22 @@
 ---
-title: Image and Link
-description: This section provides an overview of how AriaDocs handles links and images in Markdown.
+title: Ecossistema
+description: Nesta página, você vai entender como todas as criações da Vistune AI se conectam, incluindo plataformas, produtos e muito mais!
 ---
 
-In AriaDocs, all links and images written in Markdown are automatically converted to their respective Next.js components. This allows for better optimization and performance in your application.
+Por que chamamos de `Ecossistema`? A ciência define um ecossistema como **um grupo de seres que habitam em um determinado local, as relações entre eles e a interação dessas comunidades com o ambiente em que vivem**. Partindo dessa ideia, usamos o termo para explicar a conexão entre nossas plataformas e para demonstrar como pensamos e desenvolvemos o conjunto de tudo isso, a Vistune.
 
-## Links
+## Plataformas
 
-When you create a link in your Markdown, it is converted to the Next.js `Link` component. This enables client-side navigation and improves loading times. Here’s an example of how a Markdown link is transformed:
+Muitos, entre usuários da Vistune e amigos, já perguntaram por que separamos a Vistune em três plataformas: `Aplicativo`, `University` e `Marketplace`. Essas perguntas geralmente surgem ao perceberem que as plataformas se complementam e poderiam estar unificadas em um único espaço.
 
-### Markdown
+No entanto, o motivo dessa divisão é alcançar públicos diversificados: aqueles que querem aprender, os que escolhem a Vistune como canal para acessar a IA e aqueles que desejam comercializar seu trabalho.
 
-```markdown
-[Visit OpenAI](https://www.openai.com)
-```
+Imagine o potencial da University, cheia de aulas e materiais de estudo gratuitos, em parceria com escolas, por exemplo! Não poderíamos nos privar do privilégio de alcançar e ajudar mais pessoas, mesmo aquelas que não usam a plataforma principal, o aplicativo.
 
-### Rendered Output
+## Estrutura da Vistune
 
-The above Markdown is converted to:
+![Alt text for the image](/docs/ecosystem.png)
 
-```jsx
-<Link href="https://www.openai.com" target="_blank" rel="noopener noreferrer">
-    Visit OpenAI
-</Link>
-```
+`Em resumo`, nosso ecossistema funciona assim: usamos a University também para ensinar os usuários a utilizarem nosso Aplicativo. Alguns desses usuários se identificam tanto com a Vistune e suas ferramentas que acabam sendo procurados nas comunidades do University para prestar serviços e vender suas criações.
 
-## Images
-
-Similarly, images in Markdown are transformed into the Next.js `Image` component. This allows for automatic image optimization, such as lazy loading and resizing, which enhances performance and user experience. Here’s an example:
-
-### Markdown
-
-```markdown
-![Alt text for the image](https://via.placeholder.com/150)
-```
-
-### Rendered Output
-
-The above Markdown is converted to:
-
-```jsx
-<Image
-    src="https://via.placeholder.com/150"
-    alt="Alt text for the image"
-    width={800}
-    height={350}
-/>
-```
-
-## Benefits
-
-- **Performance Optimization**: Automatic conversion to Next.js components ensures optimized loading of images and links.
-- **Improved User Experience**: Client-side navigation with Next.js `Link` improves the browsing experience.
-- **Responsive Images**: Next.js `Image` component handles responsive images, providing the best quality for various device sizes.
-
-By utilizing these features, you can ensure that your documentation is not only visually appealing but also performs efficiently.
+**É aí que entra o Marketplace!**

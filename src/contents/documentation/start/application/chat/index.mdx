@@ -1,38 +1,222 @@
 ---
-title: Custom Components
-description: How to create custom components for Markdown.
+title: Bate-Papo
+description: Reúna todos os seus canais de comunicação em um único bate-papo e, além disso, utilize Inteligência Artificial para responder às mensagens de forma eficiente.
 ---
 
-To add custom components in AriaDocs, follow these steps:
+Nosso bate-papo centraliza as mensagens do WhatsApp, Instagram, Gmail, Telegram e outros em um só lugar, permitindo que você atenda todos os contatos sem precisar acessar cada aplicativo individualmente. Além disso, você pode utilizar a Cleo, nosso modelo de IA para atendimento, enquanto monitora a mágica acontecendo.
 
-1. **Create Your Component**: First, create your custom component in the `@components/markdown` folder. For example, you might create a file named `Outlet.tsx`.
+## Estrutura e Layout
 
-2. **Import Your Component**: Next, open the `@lib/markdown.ts` file. This is where you'll register your custom component for use in Markdown.
+Nesta seção, explicaremos cada uma das funções disponíveis na página. Vamos dar uma olhada na estrutura básica do bate-papo:
 
-3. **Add Your Component to the Components Object**: In the `@lib/markdown.ts` file, import your custom component and add it to the `components` object. Here’s how to do it:
+![Imagem ilustrativa](/docs/chat.jpg)
 
-```ts
-import Outlet from "@/components/markdown/outlet";
+O bate-papo possui algumas funções não convencionais, especialmente aquelas relacionadas ao controle da IA. Mas não se preocupe, ao final desta página você estará familiarizado com todas elas!
 
-// Add custom components
-const components = {
-  Outlet,
-};
-```
+### 1. Lista de Conversas
 
-4. **Using Your Custom Component in Markdown**: After registering your component, you can now use it anywhere in your Markdown content. For instance, if your `Outlet` component is designed to display additional information, you can use it as follows:
+Vamos começar pela lista de contatos. Assim como no WhatsApp, todos os contatos que interagirem com você aparecerão nesta seção. Chamaremos cada item da lista de "cartão do contato". Veja um exemplo de cartão:
 
-### Markdown Example
+![Imagem ilustrativa](/docs/chat-1.jpg)
 
-```markdown
-<Outlet>
-  This is some custom content rendered by the Outlet component!
-</Outlet>
-```
+O cartão possui algumas informações importantes, incluindo algumas fornecidas pela própria Cleo. Siga as letras indicadas na imagem acima para ler a explicação abaixo.
 
-### Rendered Output
+#### a. Identificador
 
-This will render the content inside the `Outlet` component, allowing you to create reusable and dynamic Markdown content.
+Os cartões são identificados principalmente pelo nome do usuário. Caso o nome não esteja disponível, podem ser utilizados o número de telefone ou o e-mail como identificadores.
 
+#### b. Canais
 
-By following these steps, you can extend the capabilities of your Markdown documentation and create a more engaging user experience.
+Os ícones representam os canais de comunicação disponíveis para o contato. Por exemplo, se houver ícones do WhatsApp e do Instagram, isso significa que você pode enviar mensagens por ambos os aplicativos.
+
+#### c. Data
+
+Visualize a data da última mensagem do contato, que pode ser tanto uma mensagem recebida quanto enviada.
+
+#### d. Assunto da Conversa
+
+Uma funcionalidade da IA: a Cleo informará o assunto da conversa, permitindo que você tenha uma ideia do conteúdo sem precisar ler todas as mensagens.
+
+#### e. Mensagem Recente
+
+Exibe a última mensagem da conversa, similar ao que você encontra em bate-papos convencionais.
+
+#### f. Etiquetas
+
+A Cleo adicionará etiquetas nos contatos conforme o contexto em que eles se encaixam, permitindo a qualificação de cada conversa.
+
+### 2. Controle dos Contatos
+
+Esta seção é responsável por gerenciar a lista de contatos mencionada anteriormente. Veja a imagem:
+
+![Imagem ilustrativa](/docs/chat-2.jpg)
+
+Abaixo, todas essas funções serão explicadas. Acompanhe pelas letras indicadas na imagem.
+
+#### a. Especial
+
+A palavra "Bate Papo" funciona como um menu. Ao clicar nela, um menu é exibido com várias opções que permitem fazer alterações em toda a lista de contatos como: arquivar/desarquivar, ativar/desativar a Cleo e outros.
+
+#### b. Mensagens Vistas
+
+Aqui, você pode filtrar a lista de contatos para mostrar apenas as conversas não visualizadas.
+
+#### c. Buscar Contato
+
+Você pode procurar um cartão de contato utilizando o nome, e-mail ou número de telefone.
+
+#### d. Filtro Principal
+
+Esse é o principal filtro nesta seção, oferecendo diversas opções para classificar a lista de contatos em categorias, como: arquivados, pausados para atendimento humano, entre outros.
+
+#### e. Canais
+
+Conforme mencionado, nosso bate-papo unifica vários canais de comunicação e, nesta seção, você pode filtrar os cartões de contato por canal específico.
+
+#### f. Lista de Contatos
+
+Aqui, você pode adicionar um contato ao seu bate-papo e também visualizar todos os contatos em uma lista.
+
+### 3. Ferramentas
+
+Agora, dentro de uma conversa, várias funções estão disponíveis. Veja a imagem abaixo:
+
+![Imagem ilustrativa](/docs/chat-3.jpg)
+
+#### a. Transferir Atendimento
+
+A primeira função permite gerenciar os atendimentos transferindo contatos específicos para sua equipe.
+
+<Note title="Nota">
+Para utilizar essa função, é necessário configurar sua equipe na página [Configurações](/settings/team). Recomendo também a leitura de [esta página](/documentation/start/application/settings/team) para mais informações.
+</Note>
+
+#### b. Mesclar Conversas
+
+Se a mesma pessoa enviou mensagens para você em diferentes canais, é possível unificar esses contatos em um único registro para evitar duplicidades.
+
+<Note title="Nota">
+Essa ação é permanente e, uma vez realizada, não é possível separar os contatos novamente. A única opção, caso um erro ocorra, é excluir o contato mesclado incorretamente.
+</Note>
+
+#### c. Modo Gerente
+
+A Cleo solicitará sua ajuda em atendimentos onde identificar que a intervenção humana é necessária.
+
+<Note title="Nota">
+Você pode instruí-la de três maneiras diferentes: permitindo o envio da resposta, pausando o atendimento da IA, ou digitando a informação necessária para que ela responda corretamente.
+</Note>
+
+#### d. Arquivar ou Desarquivar
+
+Essa função ajuda a organizar seus contatos. Se você precisar alterar como um contato é exibido na lista, pode fazê-lo aqui.
+
+<Note title="Nota">
+Um cartão de contato arquivado só aparece quando o filtro de conversas arquivadas é aplicado. Portanto, tenha cuidado ao arquivar contatos.
+</Note>
+
+#### e. Reportar
+
+Essa é mais uma daquelas funções não convencionais. Já precisou reportar um atendimento inadequado realizado pela IA? Não é algo comum, mas este botão permite que você faça isso!
+
+<Note title="Nota">
+Uma conversa reportada é enviada diretamente aos nossos desenvolvedores para análise.
+</Note>
+
+#### f. Cleo
+
+Como você já deve saber, a Cleo é o nosso modelo de IA para atendimento ao cliente. Neste local, você pode ativar ou desativar sua atividade para um contato específico.
+
+<Note title="Nota">
+Uma vez desativada, a Cleo só será reativada manualmente por você ou por alguém da sua equipe. Evite manter muitos chats pausados.
+</Note>
+
+#### g. Contato
+
+Visualize todos os dados do contato que a Vistune armazenou, como endereço, pedidos, interesses e outros.
+
+<Note title="Nota">
+A maioria dos dados dos contatos é obtida por meio de integrações. Você pode saber mais sobre isso [nesta página](/documentation/start/application/integrations).
+</Note>
+
+## Sobre as Mensagens
+
+Vamos falar sobre as mensagens e suas funções. É provável que você se familiarize facilmente com esta parte, pois elas são comuns na maioria dos bate-papos.
+
+<Note title="Nota">
+Essas funções dependem do canal utilizado e das integrações realizadas. Explicaremos melhor abaixo!
+</Note>
+
+### Exportar
+
+Se você precisa armazenar algumas mensagens na nuvem, esta função é ideal para você. Integre ao Google Sheets para que as mensagens e algumas informações sejam enviadas automaticamente para uma planilha.
+
+![Imagem ilustrativa](/docs/report.jpg)
+
+### Editar
+
+Exclusivo para o WhatsApp! As mensagens de texto que você enviar podem ser editadas em um período de até 15 minutos após o envio.
+
+![Imagem ilustrativa](/docs/edit-and-delete.jpg)
+
+### Deletar
+
+Exclusivo para o WhatsApp! Você pode excluir uma mensagem enviada se não tiver passado cerca de 2 dias desde o envio.
+
+![Imagem ilustrativa](/docs/edit-and-delete.jpg)
+
+### Enviar
+
+Para enviar mensagens a um contato, é necessário primeiro ter integrado algum canal, e o contato deve ter esse canal disponível para se conectar. Além disso, ao enviar uma mensagem para o usuário, a Cleo é automaticamente pausada.
+
+![Imagem ilustrativa](/docs/send.jpg)
+
+#### a. Arquivos
+
+Envie arquivos para o contato utilizando este botão.
+
+<Note title="Nota">
+Há um limite de 3 MB por arquivo enviado.
+</Note>
+
+#### b. Selecionar Canal
+
+Conforme mencionado anteriormente, um contato pode ter mais de um canal registrado. Por isso, você pode enviar mensagens através de diferentes aplicativos, simplesmente alterando o canal neste botão.
+
+<Note title="Nota">
+Por exemplo: Se o contato tiver um número de WhatsApp e uma conta no Instagram, você pode enviar um "oi" pelo WhatsApp e um "Tudo bem?" pelo direct. É apenas um exemplo, ok?
+</Note>
+
+#### c. Otimizar com IA
+
+Enviar respostas bem elaboradas para dezenas de contatos pode ser desgastante. Se você não quiser ou não puder usar a Cleo em um contato específico, ainda assim é possível usar um "braço" dela para otimizar um esboço de resposta.
+
+<Note title="Nota">
+Use essa função para que, com um pequeno esboço, seja gerada uma mensagem bem qualificada.
+</Note>
+
+## Conectar Canais
+
+Em algumas partes desta página, mencionamos os "Canais de Comunicação". É assim que chamamos todos os aplicativos que a Vistune conecta ao nosso bate-papo. Veja todos eles:
+
+| **Canais**       | **Descrição**                                                                                          |
+|------------------|--------------------------------------------------------------------------------------------------------|
+| WhatsApp         | O canal mais utilizado pela Cleo. Utilizamos todas as funcionalidades que o WhatsApp Business oferece. |
+| Instagram        | A Cleo pode gerenciar todos os comentários e mensagens no direct que você recebe na sua conta.         |
+| Gmail            | Recebe muitas mensagens de clientes por e-mail? Deixe a Cleo cuidar disso para você.                   |
+| Telegram         | Conhecido pela sua portabilidade de bots. Imagine esse poder integrado a uma Inteligência Artificial.   |
+
+## Assuntos Relacionados
+
+Esta página abordou diversos tópicos, e compreendemos que você pode ter algumas dúvidas. Abaixo, você encontrará uma lista com todos os assuntos discutidos acima, cada um com uma página dedicada.
+
+<Note title="Nota">
+  Se, após a leitura, ainda houver alguma dúvida, sinta-se à vontade para criar
+  um [ticket de suporte](/documentation/start/application/introduction#suporte). Estamos à disposição para ajudar!
+</Note>
+
+| **Tópico**                      | **Utilização**                                                                 |
+|---------------------------------|--------------------------------------------------------------------------------|
+| [Integrações](/documentation/start/application/integrations)            | As integrações são responsáveis pela coleta de grande parte dos dados pela Vistune, permitindo que o Vision os aproveite de maneira eficaz. |
+| [Modelos da Vistune](/documentation/start/application/flow/vistune-models)    | Nesta página, discutimos o Vision. Recomendamos a leitura para entender melhor como esse modelo opera. |
+| [Equipe](/documentation/start/application/settings/team) | Nesta página, discutimos sobre a equipe em casos de gerenciamento de atendimento. Isso pode ser útil para você. |
